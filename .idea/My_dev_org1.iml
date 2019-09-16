@@ -44,6 +44,14 @@
                       <option name="name" value="ApexComponent" />
                     </MetadataType>
                     <MetadataType>
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="TestPage" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
                       <option name="name" value="ApexPage" />
                     </MetadataType>
                     <MetadataType>
