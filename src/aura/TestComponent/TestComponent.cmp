@@ -1,0 +1,7 @@
+<!--
+ - Created by user on 04-Sep-19.
+ -->
+
+<aura:component description="TestComponent" implements="flexipage:availableForAllPageTypes">
+    <h1>Hello Component</h1>
+</aura:component>
