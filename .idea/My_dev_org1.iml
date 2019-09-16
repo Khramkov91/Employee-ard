@@ -29,11 +29,11 @@
                       <option name="entries">
                         <list>
                           <MetadataEntry>
-                            <option name="name" value="RESTCampResource" />
+                            <option name="name" value="DisplayImageExtension" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
-                            <option name="name" value="myContactController" />
+                            <option name="name" value="SaveAsPdfController" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>
@@ -47,7 +47,15 @@
                       <option name="entries">
                         <list>
                           <MetadataEntry>
-                            <option name="name" value="TestPage" />
+                            <option name="name" value="EmployeeDetail" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EmployeeDetailEdit" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EmployeeList" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                         </list>

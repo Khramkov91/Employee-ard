@@ -1,0 +1,13 @@
+<!--
+ - Created by user on 16-Sep-19.
+ -->
+
+<apex:page id="EmployeeList" standardController="Contact" recordSetVar="contacts" showHeader="false">
+    <apex:repeat value="{!contacts}" var="cnt">
+        <ul>
+            <li>
+                <apex:outputLink value="/apex/EmployeeDetail?id={!cnt.Id}">{!cnt.Name}</apex:outputLink>
+            </li>
+        </ul>
+    </apex:repeat>
+</apex:page>
