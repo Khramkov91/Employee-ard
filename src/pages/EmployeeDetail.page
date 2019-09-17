@@ -9,15 +9,16 @@
            contentType="{!renderedContentType}"
            renderAs="{!renderingService}">
     <apex:form>
-        <apex:pageBlock title="Edit Employee Info">
-            <apex:pageMessages/>
+        <apex:pageBlock title="Employee Info">
             <apex:pageBlockSection columns="1">
-                <apex:outputText value="{! Contact.Name }"/>
+                <apex:outputText value="{! Contact.FirstName }"/>
+                <apex:outputText value="{! Contact.LastName }"/>
                 <apex:outputText value="{! Contact.Phone }"/>
                 <apex:outputText value="{! Contact.Title }"/>
                 <apex:image value="/servlet/servlet.FileDownload?file={!FileId}"
                             width="100px"
-                            height="100px"/>
+                            height="100px"
+                            style="border: 1px solid black"/>
             </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
@@ -28,7 +29,7 @@
             <apex:param assignTo="{! renderedFileName }" value="Contact-List.pdf"/>
         </apex:commandLink>
         <br/>
-        <apex:outputLink value="/apex/EmployeeDetailEdit?id={!Contact.Id}">Edit Employee Info</apex:outputLink>
+        <apex:outputLink value="/apex/EmployeeDetailEdit?id={!Contact.Id}&imageId={!FileId}">Edit Employee Info</apex:outputLink>
         <hr/>
     </apex:form>
 </apex:page>

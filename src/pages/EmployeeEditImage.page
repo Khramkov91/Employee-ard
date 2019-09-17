@@ -1,0 +1,28 @@
+<!--
+ - Created by user on 17-Sep-19.
+ -->
+
+<apex:page id="EmployeeEditImage"
+           showHeader="false"
+           standardController="Contact"
+           extensions="FileUploadExtension">
+    <apex:form>
+        <apex:repeat value="{!Contact.Attachments}" var="att">
+            <apex:outputLink value="/apex/EmployeeDetailEdit?id={!Contact.Id}&imageId={!att.Id}">
+                <apex:image value="/servlet/servlet.FileDownload?file={!att.Id}" width="200px" height="200px"/>
+            </apex:outputLink>
+        </apex:repeat>
+        <apex:pageMessages />
+        <apex:pageBlock title="Upload image">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!upload}" value="Save"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection showHeader="false" columns="1" id="block1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="File" for="file"/>
+                    <apex:inputFile accept=".png" value="{!attachment.body}" filename="{!attachment.name}" id="file"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

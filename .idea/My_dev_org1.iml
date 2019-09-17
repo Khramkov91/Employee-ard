@@ -33,6 +33,10 @@
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>
+                            <option name="name" value="FileUploadExtension" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
                             <option name="name" value="SaveAsPdfController" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
@@ -52,6 +56,10 @@
                           </MetadataEntry>
                           <MetadataEntry>
                             <option name="name" value="EmployeeDetailEdit" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="EmployeeEditImage" />
                             <option name="selected" value="true" />
                           </MetadataEntry>
                           <MetadataEntry>

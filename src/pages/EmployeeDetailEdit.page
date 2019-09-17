@@ -10,13 +10,15 @@
         <apex:pageBlock title="Edit Employee Info">
             <apex:pageMessages/>
             <apex:pageBlockSection columns="1">
-                <apex:inputField value="{! Contact.Name }"/>
+                <apex:inputField value="{! Contact.FirstName }"/>
+                <apex:inputField value="{! Contact.LastName }"/>
                 <apex:inputField value="{! Contact.Phone }"/>
                 <apex:inputField value="{! Contact.Title }"/>
                 <apex:image value="/servlet/servlet.FileDownload?file={!FileId}"
                             width="100px"
                             height="100px"/>
-                <apex:outputLink value="/apex/EmployeeDetail?id={!Contact.Id}">Edit Employee Info</apex:outputLink>
+                <apex:commandButton action="{!saveEmployee}" value="Save"/>
+                <apex:commandButton value="Edit image" action="{!URLFOR("/apex/EmployeeEditImage",null,[id=Contact.Id])}"/>
             </apex:pageBlockSection>
         </apex:pageBlock>
     </apex:form>
