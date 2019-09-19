@@ -8,20 +8,20 @@
            extensions="SaveAsPdfExtension"
            contentType="{!renderedContentType}"
            renderAs="{!renderingService}">
-    <apex:form>
-        <apex:pageBlock title="Employee Info">
-            <apex:pageBlockSection columns="1">
-                <apex:outputText value="{! Contact.FirstName }"/>
-                <apex:outputText value="{! Contact.LastName }"/>
-                <apex:outputText value="{! Contact.Phone }"/>
-                <apex:outputText value="{! Contact.Title }"/>
+
+        <div>
+            <div style="background-color: blue; display: inline-block; border: 5px solid black; font-size: 25px; width: 700px; align-items: center;">
+                <p style="margin-left: 20px">First name: <apex:outputText value="{! Contact.FirstName }"/></p>
+                <p style="margin-left: 20px">Last name:<apex:outputText value="{! Contact.LastName }"/></p>
+                <p style="margin-left: 20px">Phone: <apex:outputText value="{! Contact.Phone }"/></p>
+                <p style="margin-left: 20px">Title: <apex:outputText value="{! Contact.Title }"/></p>
+            </div>
+            <div style="position: absolute; left: 470px; top: 27px; border-left: 1px inset;">
                 <apex:image value="/servlet/servlet.FileDownload?file={!FileId}"
-                            width="100px"
-                            height="100px"
-                            style="border: 1px solid black"/>
-            </apex:pageBlockSection>
-        </apex:pageBlock>
-    </apex:form>
+                            width="200px"
+                            height="200px"/>
+            </div>
+        </div>
 
     <apex:form rendered="{! renderingService != 'PDF' }"
                style="text-align: right; margin: 10px;">

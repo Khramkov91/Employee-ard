@@ -6,7 +6,7 @@
            showHeader="false"
            standardController="Contact"
            extensions="FileUploadExtension">
-    <apex:form>
+    <apex:form id="main-list">
         <apex:repeat value="{!Contact.Attachments}" var="att">
             <apex:outputLink value="/apex/EmployeeDetailEdit?id={!Contact.Id}&imageId={!att.Id}">
                 <apex:image value="/servlet/servlet.FileDownload?file={!att.Id}" width="200px" height="200px"/>
@@ -15,7 +15,7 @@
         <apex:pageMessages />
         <apex:pageBlock title="Upload image">
             <apex:pageBlockButtons >
-                <apex:commandButton action="{!upload}" value="Save"/>
+                <apex:commandButton action="{!upload}" value="Save" reRender=""/>
             </apex:pageBlockButtons>
             <apex:pageBlockSection showHeader="false" columns="1" id="block1">
                 <apex:pageBlockSectionItem >

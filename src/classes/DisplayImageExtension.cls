@@ -31,6 +31,10 @@ public with sharing class DisplayImageExtension {
 
     public PageReference saveEmployee() {
         upsert(cnt);
+        Attachment attac = [SELECT Id, Name
+                            FROM Attachment
+                            WHERE Id =: fileId];
+        update attac;
         PageReference pageRef = new PageReference('/apex/EmployeeDetail');
         pageRef.getParameters().put('id', recId);
         pageRef.getParameters().put('imageId', fileId);
