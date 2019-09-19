@@ -21,6 +21,17 @@ public with sharing class FileUploadExtension {
         set;
     }
 
+    public List<Attachment> getAttachments() {
+        List<Attachment> attList = [    SELECT Id
+                                        FROM Attachment
+                                        WHERE parentId =: recId];
+        if (attList.isEmpty()) {
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Error Uploading Attachments'));
+        }
+
+        return attList;
+    }
+
     public PageReference upload() {
         try {
             if(attachment.Body != null) {
@@ -45,9 +56,7 @@ public with sharing class FileUploadExtension {
             attachment.Body = null;
         }
         attachment = new Attachment();
-        PageReference pageRef = new PageReference('/apex/EmployeeEditImage');
-        pageRef.getParameters().put('id', recId);
-        pageRef.setRedirect(true);
-        return pageRef;
+
+        return null;
     }
 }

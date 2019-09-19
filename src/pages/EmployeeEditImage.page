@@ -7,7 +7,7 @@
            standardController="Contact"
            extensions="FileUploadExtension">
     <apex:form id="main-list">
-        <apex:repeat value="{!Contact.Attachments}" var="att">
+        <apex:repeat value="{!Attachments}" var="att">
             <apex:outputLink value="/apex/EmployeeDetailEdit?id={!Contact.Id}&imageId={!att.Id}">
                 <apex:image value="/servlet/servlet.FileDownload?file={!att.Id}" width="200px" height="200px"/>
             </apex:outputLink>
