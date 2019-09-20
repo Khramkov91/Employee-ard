@@ -15,7 +15,7 @@
         <apex:pageMessages />
         <apex:pageBlock title="Upload image">
             <apex:pageBlockButtons >
-                <apex:commandButton action="{!upload}" value="Save" reRender=""/>
+                <apex:commandButton action="{!upload}" value="Save"/>
             </apex:pageBlockButtons>
             <apex:pageBlockSection showHeader="false" columns="1" id="block1">
                 <apex:pageBlockSectionItem >
@@ -24,5 +24,6 @@
                 </apex:pageBlockSectionItem>
             </apex:pageBlockSection>
         </apex:pageBlock>
+        <apex:commandButton action="{!URLFOR("/apex/EmployeeDetailEdit",null,[id=Contact.Id])}" value="Back"/>
     </apex:form>
 </apex:page>

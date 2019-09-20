@@ -6,20 +6,25 @@
            standardController="Contact"
            extensions="DisplayImageExtension"
            showHeader="false">
-    <apex:form>
-        <apex:pageBlock title="Edit Employee Info">
-            <apex:pageMessages/>
-            <apex:pageBlockSection columns="1">
-                <apex:inputField value="{! Contact.FirstName }"/>
-                <apex:inputField value="{! Contact.LastName }"/>
-                <apex:inputField value="{! Contact.Phone }"/>
-                <apex:inputField value="{! Contact.Title }"/>
+    <apex:form id="form">
+        <apex:pageBlock title="Edit Employee Info" id="pageBlock">
+            <apex:pageBlockSection columns="1" id="section">
+                <apex:inputField value="{! Contact.FirstName }" required="true"/>
+                <apex:inputField value="{! Contact.LastName }" required="true"/>
+                <apex:inputField id="phone" value="{! Contact.Phone }" required="true"/>
+                <apex:inputField value="{! Contact.Title }" required="true"/>
                 <apex:image value="/servlet/servlet.FileDownload?file={!FileId}"
-                            width="100px"
-                            height="100px"/>
+                            style="display: block;
+                                   max-width:230px;
+                                   max-height:95px;
+                                   width: auto;
+                                   height: auto;"/>
+                <p id="err1"></p>
                 <apex:commandButton action="{!saveEmployee}" value="Save"/>
                 <apex:commandButton value="Edit image" action="{!URLFOR("/apex/EmployeeEditImage",null,[id=Contact.Id])}"/>
+                <apex:commandButton value="Back" action="{!URLFOR("/apex/EmployeeDetail",null,[id=Contact.Id])}"/>
             </apex:pageBlockSection>
         </apex:pageBlock>
+<!--        <apex:includeScript value="{!$Resource.Validation}" />-->
     </apex:form>
 </apex:page>

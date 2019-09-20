@@ -8,13 +8,16 @@
            extensions="SaveAsPdfExtension"
            contentType="{!renderedContentType}"
            renderAs="{!renderingService}">
+    <!--<apex:includeScript value="{!URLFOR($Resource.Validation)}"/>-->
 
-        <div>
-            <div style="background-color: blue; display: inline-block; border: 5px solid black; font-size: 25px; width: 700px; align-items: center;">
-                <p style="margin-left: 20px">First name: <apex:outputText value="{! Contact.FirstName }"/></p>
-                <p style="margin-left: 20px">Last name:<apex:outputText value="{! Contact.LastName }"/></p>
-                <p style="margin-left: 20px">Phone: <apex:outputText value="{! Contact.Phone }"/></p>
-                <p style="margin-left: 20px">Title: <apex:outputText value="{! Contact.Title }"/></p>
+    <apex:form id="mainForm">
+        <div id="mainWrapper" style="background-color: blue; border: 5px solid black; width: 690px; height: auto;">
+            <div id="textWrapper"
+                 style="font-size: 20px; width: 400px; height: 320px; word-break: break-word; white-space: normal;">
+                <p style="margin-left: 15px">Firstname: <apex:outputText id="firstName" value="{!Contact.FirstName}"/></p>
+                <p style="margin-left: 15px">Lastname: <apex:outputText value="{!Contact.LastName}"/></p>
+                <p style="margin-left: 15px">Phone: <apex:outputText value="{!Contact.Phone}"/></p>
+                <p style="margin-left: 15px">Title: <apex:outputText value="{!Contact.Title}"/></p>
             </div>
             <div style="position: absolute; left: 470px; top: 27px; border-left: 1px inset;">
                 <apex:image value="/servlet/servlet.FileDownload?file={!FileId}"
@@ -23,13 +26,19 @@
             </div>
         </div>
 
-    <apex:form rendered="{! renderingService != 'PDF' }"
+        <!--<p>QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ<br/>QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ</p>-->
+    </apex:form>
+
+    <apex:form rendered="{!renderingService != 'PDF'}"
                style="text-align: right; margin: 10px;">
-        <apex:commandLink action="{! saveToPdf }" value="Save to PDF">
-            <apex:param assignTo="{! renderedFileName }" value="Contact-List.pdf"/>
+        <apex:commandLink action="{!saveToPdf}" value="Save to PDF">
+            <apex:param assignTo="{!renderedFileName}" value="Contact-List.pdf"/>
         </apex:commandLink>
         <br/>
-        <apex:outputLink value="/apex/EmployeeDetailEdit?id={!Contact.Id}&imageId={!FileId}">Edit Employee Info</apex:outputLink>
+        <apex:outputLink value="/apex/EmployeeDetailEdit?id={!Contact.Id}&imageId={!FileId}">Edit Employee Info
+        </apex:outputLink>
+        <br/>
+        <apex:outputLink value="/apex/EmployeeList">Back</apex:outputLink>
         <hr/>
     </apex:form>
 </apex:page>

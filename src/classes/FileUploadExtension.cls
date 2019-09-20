@@ -35,7 +35,7 @@ public with sharing class FileUploadExtension {
     public PageReference upload() {
         try {
             if(attachment.Body != null) {
-                if(attachment.Name.endsWith('.png')) {
+                if(attachment.Name.endsWith('.png') || attachment.Name.endsWith('.jpg') || attachment.Name.endsWith('.jpeg')) {
                     attachment.ParentId = recId;
                     insert attachment;
                     ApexPages.addMessage(new ApexPages.message(ApexPages.severity.CONFIRM, 'File uploaded'));
